@@ -1,0 +1,122 @@
+.productDetail{
+    
+  -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 8px rgba(0,0,0,0.3);
+    box-shadow:         0px 0px 8px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 90;
+}
+.no-space [class*="span"] {
+    margin-left: 0;
+}
+.no-space {
+    margin-left:0;
+}
+.pictureImage{
+    padding: 3px;
+    min-width: 150px;
+    min-height: 150px;
+    width: 150px;
+    height: 150px;
+}
+
+.pictureIcon{
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 3px;
+}
+
+.outOfStock{
+    color: red;
+}
+
+.inStock{
+    color: skyblue;
+    
+}
+.grayOut{
+    color: gray;
+}
+
+/* Star Rating */
+.goodStar
+{
+    color: orange;
+}
+
+.badStar{
+    color: gray;
+}
+/* Ribbon Corner*/
+
+.ribbon-wrapper-blue {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+
+.ribbon-blue {
+  font: bold 15px Sans-Serif;
+  color: white;
+  text-align: center;  
+  -webkit-transform: rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  left: -5px;
+  top: 15px;
+  width: 120px;
+  background-color: #0066CC;
+}
+.ribbon-wrapper-red {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+
+.ribbon-red {
+  font: bold 15px Sans-Serif;
+  color: #333;
+  text-align: center;
+  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  left: -5px;
+  top: 15px;
+  width: 120px;
+  background-color: #B20000;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#B20000), to(#B20000)); 
+  background-image: -webkit-linear-gradient(top, #B20000, #B20000); 
+  background-image:    -moz-linear-gradient(top, #B20000, #B20000); 
+  background-image:     -ms-linear-gradient(top, #B20000, #B20000); 
+  background-image:      -o-linear-gradient(top, #B20000, #B20000); 
+  color: #6a6340;
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.ribbon-red:before, .ribbon-red:after {
+  content: "";
+  border-top:   3px solid #6e8900;   
+  border-left:  3px solid transparent;
+  border-right: 3px solid transparent;
+  position:absolute;
+  bottom: -3px;
+}
+
+.ribbon-red:before {
+  left: 0;
+}
+.ribbon-red:after {
+  right: 0;
+}

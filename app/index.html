@@ -1,0 +1,158 @@
+
+
+<!doctype html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no">
+
+  <title>My HTML File</title>
+     <script src="js/jquery-1.11.0.min.js"></script>
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link href="css/bootstrap-theme.css" rel="stylesheet">
+     <link href="css/bootstrap-theme.css.map" rel="stylesheet">
+     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+     <link href="css/bootstrap.css" rel="stylesheet">
+     <link href="css/bootstrap.css.map" rel="stylesheet">
+     <script src="js/bootstrap.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     
+    
+    <link rel="stylesheet" href="css/app.css">
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script  src="js/services.js"></script>
+       
+    
+</head>
+    
+<body ng-app="phonecatApp" ng-controller="ProductListCtrl">
+        
+         <script src="js/bootstrap.min.js"></script>
+    <div class="bs-docs-grid container">
+            <div class="row" style="padding: 5px"><div class="col-lg-12" ><h3>Tag Title</h3></div></div>
+            <div class="row" >
+                <div class="col-md-6">
+                            <span class="previous">{{productList.length}} item(s)</span>
+                </div>
+                <div  class="col-md-6">
+                            <span class="next">Sort By:
+                                <select ng-model="orderProp"  ng-change="update()">
+                                    <option value="productName">A-Z</option>
+                                     <option value="-productName">Z-A</option>
+                                </select>
+                                <span class="glyphicon glyphicon-arrow-up"></span>
+                            </span>
+                </div>
+            </div>
+
+        <div class="row" ng-repeat="p in rows">
+            <div class="col-xs-6 col-md-3 col-xs-12 col-md-6" ng-repeat="pdetail in p | orderBy:orderProp">
+                <div class="thumbnail productDetail">     
+                 <div class="ribbon-wrapper-red">
+                      <div class="ribbon-red">NEW</div>
+                    </div>
+                    <img class="img-thumbnail " style="min-height:150;height:150px;" ng-src="{{pdetail.productImages[0].url_thumb}}"  >
+                             <div class="caption">
+                                <h5>{{pdetail.productName}}</h5>
+                                  <div>
+                                        <span class="glyphicon glyphicon-star goodStar"></span>
+                                        <span class="glyphicon glyphicon-star goodStar"></span>
+                                        <span class="glyphicon glyphicon-star goodStar"></span>
+                                        <span class="glyphicon glyphicon-star badStar"></span>
+                                        <span class="glyphicon glyphicon-star badStar"></span>
+                                 </div>
+                                <p class="previous">{{pdetail.currency.currencySymbol}}{{pdetail.productPrice}}
+                                     <label class="pull-right grayOut">IN STOCK</label>
+                                     <span class="glyphicon glyphicon-map-marker pull-right inStock"></span>
+                                
+                                 </p>
+                                 <div>
+                                <button type="button" class="btn btn-default btn-xs previous">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART
+                                </button>
+                                        <span class="glyphicon glyphicon-retweet next pictureIcon"></span>
+                                        <span class="glyphicon glyphicon-bookmark next pictureIcon"></span>       
+                                 </div>
+                            </div>
+                    </div>
+                <!--
+                <a href="#" class="thumbnail">
+                    <img data-src="holder.js/100%x180" src="img/phones/dell-streak-7.2.jpg" alt="...">
+                </a>-->
+            </div>
+        </div>
+    
+  
+    
+
+          <!-- Main jumbotron for a primary marketing message or call to action -->
+        <!--<div class="jumbotron">
+            <div class="container-fluid theme-showcase pagination-centered" role="main" >
+          <div class="container">
+           
+            <div class="row" style="padding: 5px"><div class="col-lg-12" ><h3>Tag Title</h3></div></div>
+            <div class="row" >
+                <div class="col-md-6">
+                            <span class="previous">{{rows.length}} item(s)</span>
+                </div>
+                <div  class="col-md-6">
+                            <span class="next">Sort By:
+                                <select>
+                                    <option>A-Z</option>
+                                </select>
+                                <span class="glyphicon glyphicon-arrow-up"></span>
+                            </span>
+                </div>
+            </div>
+
+          </div>
+         </div>
+        </div>-->
+        <!--
+         <div ng-repeat="product in productList" style="border-style: hidden">
+
+                <div data-ng-class="{ row: (3 === ($index % 3)),  span4:(3 !== ($index % 4))}">
+                   <div class="thumbnail productDetail">     
+                            <div class="ribbon-wrapper-green"><div class="ribbon-green">NEW</div></div>
+                            
+                                <img class="img-thumbnail pictureImage" style="min-height:100px;height:100px;" ng-src="{{product.productImages[0].url_thumb}}"  >
+                             <div class="caption">
+                                <h5>{{product.productName}}</h5>
+                                  <div>
+                                        <span class="glyphicon glyphicon-star goodStar"></span>
+                                        <span class="glyphicon glyphicon-star goodStar"></span>
+                                        <span class="glyphicon glyphicon-star goodStar"></span>
+                                        <span class="glyphicon glyphicon-star badStar"></span>
+                                        <span class="glyphicon glyphicon-star badStar"></span>
+                                 </div>
+                                <p class="lead" style="font-size: 0.7e.m">{{product.currency.currencySymbol}}{{product.productPrice}}
+                                 <label class="pull-right outOfStock">OUT OF STOCK</label>
+                                        <span class="glyphicon glyphicon-warning-sign pull-right outOfStock"></span>
+                                 </p>
+                                 <div>
+                                              <button type="button" class="btn btn-default btn-xs pull-left">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART
+                            </button>
+                                        <span class="glyphicon glyphicon-retweet pull-right pictureIcon"></span>
+                                        <span class="glyphicon glyphicon-bookmark pull-right pictureIcon"></span>       
+                                 </div>
+                            </div>
+                    </div>
+                
+                </div>
+            </div>-->
+            
+            
+            
+       </div>  
+   
+    
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</body>
+</html>
+
